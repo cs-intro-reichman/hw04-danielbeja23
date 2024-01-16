@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = new int[] { 1, 2, 3 };
-        int[] array2 = new int[] { 1, 2, 3 };
+        int[] array = new int[] { 3, -4, 1, 2, 5 };
+        int[] array2 = new int[] { 1, 3, -4, 5 };
         System.out.println(containsTheSameElements(array, array2));
 
     }
@@ -63,8 +63,6 @@ public class ArrayOps {
             }
             if (flag == false) {
                 result = false;
-            } else {
-                result = true;
             }
             flag = false;
         }
