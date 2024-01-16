@@ -1,7 +1,8 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = new int[] { 2, 8, 3, 7, 8 };
-        System.out.println(secondMaxValue(array));
+        int[] array = new int[] { 1, 2, 3 };
+        int[] array2 = new int[] { 1, 2, 3 };
+        System.out.println(containsTheSameElements(array, array2));
 
     }
 
@@ -46,8 +47,28 @@ public class ArrayOps {
     }
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
-        // Write your code here:
-        return false;
+        boolean flag = false; // if the arrays are not equal numbers = false.
+        boolean result = false;// return the result
+        for (int i = 0; i < Math.max(array1.length, array2.length); i++) {
+            for (int j = 0; j < Math.min(array1.length, array2.length); j++) {
+                if (array1.length >= array2.length) {
+                    if (array1[i] != array2[j]) {
+                        flag = true;
+                    }
+                } else {
+                    if (array2[i] != array1[j]) {
+                        flag = true;
+                    }
+                }
+            }
+            if (flag == false) {
+                result = false;
+            } else {
+                result = true;
+            }
+            flag = false;
+        }
+        return result;
     }
 
     public static boolean isSorted(int[] array) {
