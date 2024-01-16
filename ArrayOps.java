@@ -1,8 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = new int[] { 3 };
-        int[] array2 = new int[] { 1 };
-        System.out.println(containsTheSameElements(array, array2));
+        int[] array2 = new int[] { 7, 5, 4, 3, -12 };
+        System.out.println(isSorted(array2));
 
     }
 
@@ -70,8 +69,26 @@ public class ArrayOps {
     }
 
     public static boolean isSorted(int[] array) {
-        // Write your code here:
-        return false;
+        {
+            boolean upSeq = false;
+            boolean downSeq = false;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] != array[i + 1]) {
+                    if (array[i] < array[i + 1] && downSeq == false) {
+                        upSeq = true;
+                    } else {
+                        if (upSeq == false) {
+                            downSeq = true;
+                        }
+
+                    }
+                }
+
+            }
+
+            return (upSeq ^ downSeq);
+        }
+
     }
 
 }
