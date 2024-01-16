@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = new int[] { 0 };
-        System.out.println(findMissingInt(array));
+        int[] array = new int[] { 1, 2, 3, 4, 5 };
+        System.out.println(secondMaxValue(array));
 
     }
 
@@ -16,8 +16,20 @@ public class ArrayOps {
     }
 
     public static int secondMaxValue(int[] array) {
-        // Write your code here:
-        return 0;
+        int maxValue = 0;
+        int seconedMax = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxValue) {
+                maxValue = array[i];
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > seconedMax && maxValue != array[i]) {
+                seconedMax = array[i];
+            }
+        }
+
+        return seconedMax;
     }
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
