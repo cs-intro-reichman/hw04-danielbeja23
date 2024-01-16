@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array2 = new int[] { 7, 5, 4, 3, -12 };
+        int[] array2 = new int[] { 1, -2, 3, 4 };
         System.out.println(isSorted(array2));
 
     }
@@ -74,18 +74,14 @@ public class ArrayOps {
             boolean downSeq = false;
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] != array[i + 1]) {
-                    if (array[i] < array[i + 1] && downSeq == false) {
+                    if (array[i] < array[i + 1]) {
                         upSeq = true;
                     } else {
-                        if (upSeq == false) {
-                            downSeq = true;
-                        }
-
+                        downSeq = true;
                     }
+
                 }
-
             }
-
             return (upSeq ^ downSeq);
         }
 
