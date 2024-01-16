@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = new int[] { 1, 2, 3, 4, 5 };
+        int[] array = new int[] { 2, 8, 3, 7, 8 };
         System.out.println(secondMaxValue(array));
 
     }
@@ -15,21 +15,34 @@ public class ArrayOps {
         return (sum - sumOfArray);
     }
 
-    public static int secondMaxValue(int[] array) {
+    private static int returnPlaceOfmax(int[] array) {
         int maxValue = 0;
-        int seconedMax = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxValue) {
+                maxValue = i;
+            }
+        }
+        return maxValue;
+    }
+
+    private static int maxValOfArray(int[] array) {
+        int maxValue = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > maxValue) {
                 maxValue = array[i];
             }
         }
+        return maxValue;
+    }
+
+    public static int secondMaxValue(int[] array) {
+        int[] newArr = new int[array.length - 1];
         for (int i = 0; i < array.length; i++) {
-            if (array[i] > seconedMax && maxValue != array[i]) {
-                seconedMax = array[i];
+            if (returnPlaceOfmax(array) != i) {
+                newArr[i] = array[i];
             }
         }
-
-        return seconedMax;
+        return maxValOfArray(newArr);
     }
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
