@@ -56,7 +56,7 @@ public class StringOps {
     public static boolean checkIfCharIsVowel(char c) {
         char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
         for (int i = 0; i < vowels.length; i++) {
-            if (c == vowels[i]) {
+            if (c == vowels[i] || vowels[i] - 32 == c) {
                 return true;
             }
         }
