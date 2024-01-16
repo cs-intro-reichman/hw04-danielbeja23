@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] array = new int[] { 3, -4, 1, 2, 5 };
-        int[] array2 = new int[] { 1, 3, -4, 5 };
+        int[] array = new int[] { 3 };
+        int[] array2 = new int[] { 1 };
         System.out.println(containsTheSameElements(array, array2));
 
     }
@@ -48,15 +48,15 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
         boolean flag = false; // if the arrays are not equal numbers = false.
-        boolean result = false;// return the result
+        boolean result = true;// return the result
         for (int i = 0; i < Math.max(array1.length, array2.length); i++) {
             for (int j = 0; j < Math.min(array1.length, array2.length); j++) {
                 if (array1.length >= array2.length) {
-                    if (array1[i] != array2[j]) {
+                    if (array1[i] == array2[j]) {
                         flag = true;
                     }
                 } else {
-                    if (array2[i] != array1[j]) {
+                    if (array2[i] == array1[j]) {
                         flag = true;
                     }
                 }
