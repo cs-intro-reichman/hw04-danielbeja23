@@ -63,9 +63,56 @@ public class StringOps {
         return false;
     }
 
+    public static boolean ifLower(char c) {
+        if (97 <= c && c <= 122) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static boolean ifUpper(char c) {
+        if (65 <= c && c <= 90) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static char changeToLow(char c) {
+        c = (char) (c + 32);
+        return c;
+    }
+
+    public static char changeToUp(char c) {
+        c = (char) (c - 32);
+        return c;
+    }
+
     public static String camelCase(String string) {
-        // Write your code here:
-        return "";
+        String newString = "";
+        boolean flag = false;
+        for (int i = 0; i < string.length(); i++) {
+            if (ifUpper(string.charAt(i))) {
+                newString = newString + changeToLow(string.charAt(i));
+            } else {
+                if (string.charAt(i) == ' ') {
+                    flag = true;
+                } else {
+                    if (flag == true) {
+                        newString = newString + changeToUp(string.charAt(i));
+                        flag = false;
+                    } else {
+                        newString = newString + string.charAt(i);
+                    }
+                }
+
+            }
+
+        }
+        return newString;
     }
 
     public static int[] allIndexOf(String string, char chr) {
