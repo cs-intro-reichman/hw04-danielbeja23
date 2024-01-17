@@ -24,7 +24,7 @@ public class StringOps {
     ////// ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String string = "Hello World";
+        String string = "   daniel beja";
 
         System.out.println(camelCase(string));
 
@@ -101,12 +101,13 @@ public class StringOps {
                 if (string.charAt(i) == ' ') {
                     flag = true;
                 } else {
-                    if (flag == true && ifUpper(string.charAt(i)) == false) {
+                    if (flag == true && ifUpper(string.charAt(i)) == false && newString.length() > 1) {
                         newString = newString + changeToUp(string.charAt(i));
                         flag = false;
-                    } else {
+                    } else if (ifLower(string.charAt(i)) == true) {
                         newString = newString + string.charAt(i);
                         flag = false;
+
                     }
                 }
 
