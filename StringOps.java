@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import javax.swing.text.StyledEditorKit.ForegroundAction;
 
 public class StringOps {
@@ -26,7 +29,7 @@ public class StringOps {
     public static void main(String[] args) {
         String string = "Hello World";
 
-        System.out.println(camelCase(string));
+        System.out.println(Arrays.toString(allIndexOf(string, 'l')));
 
     }
 
@@ -119,7 +122,27 @@ public class StringOps {
     }
 
     public static int[] allIndexOf(String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int[] array = new int[lengthOfArray(string, chr)];
+        int index = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (chr == string.charAt(i)) {
+                array[index] = i;
+                index++;
+            }
+
+        }
+
+        return array;
+    }
+
+    public static int lengthOfArray(String string, char chr) {
+        int result = 0;
+
+        for (int i = 0; i < string.length(); i++) {
+            if (chr == string.charAt(i)) {
+                result++;
+            }
+        }
+        return result;
     }
 }
