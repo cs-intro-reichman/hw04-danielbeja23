@@ -24,7 +24,7 @@ public class StringOps {
     ////// ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String string = "HELLO   world";
+        String string = "Hello World";
 
         System.out.println(camelCase(string));
 
@@ -95,17 +95,18 @@ public class StringOps {
         String newString = "";
         boolean flag = false;
         for (int i = 0; i < string.length(); i++) {
-            if (ifUpper(string.charAt(i))) {
+            if (ifUpper(string.charAt(i)) && flag == false) {
                 newString = newString + changeToLow(string.charAt(i));
             } else {
                 if (string.charAt(i) == ' ') {
                     flag = true;
                 } else {
-                    if (flag == true) {
+                    if (flag == true && ifUpper(string.charAt(i)) == false) {
                         newString = newString + changeToUp(string.charAt(i));
                         flag = false;
                     } else {
                         newString = newString + string.charAt(i);
+                        flag = false;
                     }
                 }
 
