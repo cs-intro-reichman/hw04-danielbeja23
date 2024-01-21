@@ -37,8 +37,6 @@ public class ArrayOps {
 
     public static int secondMaxValue(int[] array) {
         int[] newArr = new int[array.length - 1];
-        // #feedback - this solution can have a problem if the max value appears more than once in the array.
-        // A better approach here would be to first look for the max value, and then look for the second max value, which is not equal to the first max value (without using additional array).
         for (int i = 0; i < array.length; i++) {
             if (returnPlaceOfmax(array) != i) {
                 newArr[i] = array[i];
