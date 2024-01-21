@@ -36,6 +36,7 @@ public class StringOps {
     public static String capVowelsLowRest(String string) { // 32 65 - 90 upper 97 -122 lower
         String converted = "";
         for (int i = 0; i < string.length(); i++) {
+            // #feedback - it is usually better to use the actual value of the character, e.g. 'a', instead of its number representation.
             if (65 <= string.charAt(i) && string.charAt(i) <= 90) { // if upper
                 if (checkIfCharIsVowel(string.charAt(i))) {// if vowel
                     converted = converted + string.charAt(i);
@@ -57,6 +58,7 @@ public class StringOps {
     }
 
     public static boolean checkIfCharIsVowel(char c) {
+        // #feedback - an easier solution here would be "aeiouAEIOU".indexOf(c) != -1.
         char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
         for (int i = 0; i < vowels.length; i++) {
             if (c == vowels[i] || vowels[i] - 32 == c) {
@@ -96,7 +98,7 @@ public class StringOps {
 
     public static String camelCase(String string) {
         String newString = "";
-        boolean flag = false;
+        boolean flag = false; // #feedback - variable name not indicative, e.g. isCharAfterSpace.
         for (int i = 0; i < string.length(); i++) {
             if (ifUpper(string.charAt(i)) && flag == false) {
                 newString = newString + changeToLow(string.charAt(i));

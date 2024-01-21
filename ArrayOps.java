@@ -16,9 +16,9 @@ public class ArrayOps {
     }
 
     private static int returnPlaceOfmax(int[] array) {
-        int maxValue = 0;
+        int maxValue = 0; // #feedback - indexOfMaxValue would be more clear in this case.
         for (int i = 0; i < array.length; i++) {
-            if (array[i] > maxValue) {
+            if (array[i] > maxValue) { // #feedback - you compare arrays values with array indexes, which can lead to bugs.
                 maxValue = i;
             }
         }
@@ -48,6 +48,7 @@ public class ArrayOps {
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
         boolean flag = false; // if the arrays are not equal numbers = false.
         boolean result = true;// return the result
+        // #feedback - you also need to check the other way, that the smaller array's values are contained in the larger array.
         for (int i = 0; i < Math.max(array1.length, array2.length); i++) {
             for (int j = 0; j < Math.min(array1.length, array2.length); j++) {
                 if (array1.length >= array2.length) {
